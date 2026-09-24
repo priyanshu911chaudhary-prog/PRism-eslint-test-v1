@@ -1,19 +1,19 @@
 const SHIPPING_RATE = 15.00;
 
-function processOrder(orderId, items, customerId) {
-    debugger; 
+function processOrder(orderId, items) {
+    
 
     if (items === null) {
         throw new Error("No items in order");
     }
 
     var totalCost = 0;
-    var unusedDiscountCode = "SUMMER2025"; 
+     
     
     for (var i = 0; i < items.length; i++) {
         var item = items[i];
         
-        if (item.price === NaN) {
+        if (Number.isNaN(item.price)) {
             console.log("Invalid price detected");
             continue;
         }
@@ -21,7 +21,7 @@ function processOrder(orderId, items, customerId) {
         totalCost += item.price;
     }
     
-    var totalCost = totalCost + SHIPPING_RATE;
+    totalCost = totalCost + SHIPPING_RATE;
 
     var taxRate = 0.08;
     var finalAmount = totalCost + (totalCost * taxRate);

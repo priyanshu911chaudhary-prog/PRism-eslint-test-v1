@@ -7,7 +7,6 @@
 // ------------------------------------------------------------
 
 // 'no-unused-vars' (ESLint autofix)
-const tempValue = "This should be deleted automatically";
 const unusedMultiplier = 100;
 
 function calculateScore(points, multiplier) {
